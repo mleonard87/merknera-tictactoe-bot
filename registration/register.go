@@ -11,11 +11,17 @@ import (
 )
 
 const (
-	BOT_NAME                     = "Tic-Tac-Toe Demo Bot"
-	BOT_VERSION                  = "0.0.1"
-	GAME_MNEMONIC                = "TICTACTOE"
-	PROGRAMMING_LANGUAGE         = "Go"
-	WEBSITE                      = "http://www.github.com/mleonard87/merknera-tictactoe-bot"
+	BOT_NAME             = "Mikes Bot"
+	BOT_VERSION          = "0.0.1"
+	GAME_MNEMONIC        = "TICTACTOE"
+	PROGRAMMING_LANGUAGE = "Go"
+	WEBSITE              = "https://github.com/mleonard87/merknera-tictactoe-bot"
+	DESCRIPTION          = `
+		A simple bot written in Go. This bot has been used primarily for testing of the Tic-Tac-Toe game within
+		Merknera and as such does not implement a sophisticated algorithm - it simply selects the first
+		available space on the board. This means that when two bots of this type play against each other the
+		first player always wins.
+		`
 	RPC_REGISTRATION_METHOD_NAME = "RegistrationService.Register"
 )
 
@@ -30,6 +36,7 @@ type RPCClientRequest struct {
 		RpcEndpoint         string `json:"rpcendpoint"`
 		ProgrammingLanguage string `json:"programminglanguage"`
 		Website             string `json:"website"`
+		Description         string `json:"description"`
 	} `json:"params"`
 	Id int `json:"id"`
 }
@@ -60,6 +67,7 @@ func Register() {
 	rcr.Params.RpcEndpoint = botEndpoint
 	rcr.Params.ProgrammingLanguage = PROGRAMMING_LANGUAGE
 	rcr.Params.Website = WEBSITE
+	rcr.Params.Description = DESCRIPTION
 
 	jsonBody, err := json.Marshal(*rcr)
 	if err != nil {
