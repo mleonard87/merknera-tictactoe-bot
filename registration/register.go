@@ -11,16 +11,16 @@ import (
 )
 
 const (
-	BOT_NAME             = "Mikes Bot"
-	BOT_VERSION          = "0.0.1"
+	BOT_NAME             = "[Merknera] Tic-Tac-Toe"
+	BOT_VERSION          = "0.0.8"
 	GAME_MNEMONIC        = "TICTACTOE"
 	PROGRAMMING_LANGUAGE = "Go"
 	WEBSITE              = "https://github.com/mleonard87/merknera-tictactoe-bot"
 	DESCRIPTION          = `
-		A simple bot written in Go. This bot has been used primarily for testing of the Tic-Tac-Toe game within
-		Merknera and as such does not implement a sophisticated algorithm - it simply selects the first
-		available space on the board. This means that when two bots of this type play against each other the
-		first player always wins.
+		This bot is provided by Merknera and should always be available online. This bot has been used primarily
+		for testing of the Tic-Tac-Toe game within Merknera and as such does not implement a sophisticated
+		algorithm - it simply selects the first available space on the board. If your bot implements a reasonable
+		algorithm it should always win against this bot.
 		`
 	RPC_REGISTRATION_METHOD_NAME = "RegistrationService.Register"
 )
